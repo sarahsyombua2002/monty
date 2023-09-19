@@ -27,6 +27,7 @@ What is the proper way to use global variables
 **Requirements**
 
 **General**
+
 Allowed editors: vi, vim, emacs
 All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=c89
 All your files should end with a new line
@@ -41,6 +42,7 @@ All your header files should be include guarded
 You are expected to do the tasks in the order shown in the project
 
 **What to expect on the project**
+
 push
 
 Usage: push <int>

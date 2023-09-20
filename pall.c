@@ -1,27 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "monty.h"
 
-int stack[STACK_SIZE];
-int top = -1;
-int line_number = 0;
+void monty_pall(stack_t **stack, unsigned int line_number);
 
-void push(int value) {
-    if (top == STACK_SIZE - 1) {
-        fprintf(stderr, "Error: Stack overflow\n");
-        exit(EXIT_FAILURE);
+/**
+ * monty_pall - Prints the values of a stack_t linked list.
+ * @stack: A pointer to the top node of a stack_t linked list.
+ * @line_number: The current line number in the Monty bytecodes file.
+ */
+void monty_pall(stack_t **stack, unsigned int line_number)
+{
+    stack_t *current_node = (*stack)->next;
+
+    while (current_node)
+    {
+        printf("%d\n", current_node->n);
+        current_node = current_node->next;
     }
-    stack[++top] = value;
-}
-int i;
-void pall() {
-    if (top == -1) {
-        printf("Stack is empty\n");
-        return;
-    }
-    
-   
-    for (i = top; i >= 0; i--) {
-        printf("%d\n", stack[i]);
-    }
+    (void)line_number;
 }

@@ -1,43 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "monty.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
-int main(int argc, char *argv[]) {
-    FILE *file;
-    char opcode[256]; /* Buffer to store opcode */
-    int value; /* Variable to store integer values from the file */
+char **op_toks = NULL;
 
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-        exit(EXIT_FAILURE);
-    }
+/**
+ * main - the entry point for Monty Interp
+ *
+ * @argc: the count of arguments passed to the program
+ * @argv: pointer to an array of char pointers to arguments
+ *
+ * Return: (EXIT_SUCCESS) on success (EXIT_FAILURE) on error
+ */
+int main(int argc, char **argv)
+{
+	FILE *script_fd = NULL;
+	int exit_code = EXIT_SUCCESS;
 
-    /* Open the Monty bytecode file */
-    file = fopen(argv[1], "r");
-    if (!file) {
-        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-        exit(EXIT_FAILURE);
-    }
-
-
-    while (fscanf(file, "%s", opcode) != EOF) {
-        if (strcmp(opcode, "push") == 0) {
-            if (fscanf(file, "%d", &value) != 1) {
-                fprintf(stderr, "Error: Usage: push integer\n");
-                exit(EXIT_FAILURE);
-            }
-            push(value);
-        } else if (strcmp(opcode, "pall") == 0) {
-            pall();
-        } else {
-            fprintf(stderr, "Unknown opcode: %s\n", opcode);
-            exit(EXIT_FAILURE);
-        }
-    }
-
-    fclose(file);
-
-    return 0;
+	if (argc != 2)
+		return (usage_error());
+	script_fd = fopen(argv[1], "r");
+	if (script_fd == NULL)
+		return (f_open_error(argv[1]));
+	exit_code = run_monty(script_fd);
+	fclose(script_fd);
+	return (exit_code);
 }
-

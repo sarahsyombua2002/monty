@@ -2,8 +2,11 @@
 #include <stdlib.h>
 #include "monty.h"
 
-int stack[STACK_SIZE]; 
+#define STACK_SIZE 100
+
+int stack[STACK_SIZE];
 int top = -1;
+int line_number = 0;
 
 void push(int value) {
     if (top == STACK_SIZE - 1) {
@@ -14,6 +17,11 @@ void push(int value) {
 }
 
 void pall() {
+    if (top == -1) {
+        printf("Stack is empty\n");
+        return;
+    }
+    
     int i;
     for (i = top; i >= 0; i--) {
         printf("%d\n", stack[i]);

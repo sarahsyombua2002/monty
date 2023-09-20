@@ -9,6 +9,8 @@
 #define STACK 0
 #define QUEUE 1
 #define DELIMS " \n\t\a\b"
+#define _POSIX_C_SOURCE 200809L
+#define MAX_LINE_LENGTH 1024
 
 /* GLOBAL OPCODE TOKENS */
 extern char **op_toks;
@@ -58,6 +60,10 @@ char *get_int(int n);
 void free_tokens(void);
 int run_monty(FILE *script_fd);
 void set_op_tok_error(int error_code);
+int is_empty_line(char *line, char *delims);
+void free_tokens(void);
+unsigned int token_arr_len(void);
+void (*get_op_func(char *opcode))(stack_t**, unsigned int);
 
 /* ERROR MESSAGES & ERROR CODES */
 int usage_error(void);

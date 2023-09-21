@@ -2,12 +2,15 @@
 
 /**
  * parseline - tokenizes a line of text, storing it in line struct
+ *
  * @line: struct containing line contents and line number
  * @buffer: string of text read from script file
  *
  * Return: Nothing
  */
+
 void parseline(line_t *line, char *buffer)
+
 {
 	unsigned int i;
 	char *token = NULL;
@@ -31,11 +34,14 @@ void parseline(line_t *line, char *buffer)
 
 /**
  * parsefile - reads and parses file one line at a time
+ *
  * @file: the script to be read
  *
  * Return: Nothing
  */
+
 void parsefile(FILE *file)
+
 {
 	size_t size = 0;
 	meta_t *meta = NULL;

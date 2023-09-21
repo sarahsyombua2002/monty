@@ -2,11 +2,15 @@
 
 /**
  * addop - adds the top two elements together
+ *
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
+ *
  * Return: Nothing.
  */
+
 void addop(stack_t **stack, unsigned int nline)
+
 {
 	stack_t *temp;
 
@@ -25,11 +29,15 @@ void addop(stack_t **stack, unsigned int nline)
 
 /**
  * subop - subtracts the top two elements and stores it in second element
+ *
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
+ *
  * Return: Nothing.
  */
+
 void subop(stack_t **stack, unsigned int nline)
+
 {
 	stack_t *temp;
 
@@ -48,11 +56,15 @@ void subop(stack_t **stack, unsigned int nline)
 
 /**
  * divop - divides the top two elements and stores it in second element
+ *
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
+ *
  * Return: Nothing.
  */
+
 void divop(stack_t **stack, unsigned int nline)
+
 {
 	stack_t *temp;
 
@@ -77,11 +89,15 @@ void divop(stack_t **stack, unsigned int nline)
 
 /**
  * mulop - multiplies the top two elements and stores it in second element
+ *
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
+ *
  * Return: Nothing.
  */
+
 void mulop(stack_t **stack, unsigned int nline)
+
 {
 	stack_t *temp;
 
@@ -100,10 +116,13 @@ void mulop(stack_t **stack, unsigned int nline)
 
 /**
  * modop - multiplies the top two elements and stores it in second element
+ *
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
+ *
  * Return: Nothing.
  */
+
 void modop(stack_t **stack, unsigned int nline)
 {
 	stack_t *temp;

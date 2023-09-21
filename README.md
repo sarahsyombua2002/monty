@@ -100,8 +100,8 @@ Rotates the bottom element of the stack/queue to the top.
 stack
 
 Switches a queue to stack mode.
-queue
 
+queue
 Switches a stack to queue mode.
 
 **By: James Mutua & Sarah Syombua**

@@ -9,15 +9,18 @@
  *         Otherwise - 0.
  */
 int is_empty_line(char *line, char *delims)
-{
-    if (line == NULL || delims == NULL)
+{	
+	int i;
+	int j;
+
+	if (line == NULL || delims == NULL)
         return 0;
 
-    for (int i = 0; line[i] != '\0'; i++)
+    for (i = 0; line[i] != '\0'; i++)
     {
         int is_delim = 0;
 
-        for (int j = 0; delims[j] != '\0'; j++)
+        for (j = 0; delims[j] != '\0'; j++)
         {
             if (line[i] == delims[j])
             {

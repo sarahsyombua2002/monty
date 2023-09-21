@@ -1,11 +1,17 @@
 #include "monty.h"
 
 /**
- * main - opens a monty script file for parsing
- * @argc: count of arguments
- * @argv: array of arguments
+ * main - Entry point for a Monty script interpreter
+ * @argc: Number of command-line arguments
+ * @argv: Array of strings containing the arguments
  *
- * Return: EXIT_SUCCESS on success, EXIT_FAILURE on failure
+ * Description: This function serves as the entry point for a Monty script
+ * interpreter. It takes one command-line argument, the Monty script file,
+ * and checks the argument count before attempting to open the file. If
+ * successful, it calls parsefile() to execute the script.
+ *
+ * Return: EXIT_SUCCESS on script success, EXIT_FAILURE on errors (e.g.,
+ * invalid args or file not found).
  */
 int main(int argc, char *argv[])
 {
